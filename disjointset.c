@@ -81,7 +81,6 @@ int main() {
             default:
                 printf("Invalid choice! Try again.\n");
         }
-    } while (choice != 4);
+    } 
 
-    return 0;
 }
