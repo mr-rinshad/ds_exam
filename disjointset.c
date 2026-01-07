@@ -1,36 +1,31 @@
 #include<stdio.h>
 
-// Define the maximum number of elements
 #define MAX 100
 
-int parent[MAX];  // Array to store parent of each element
+int parent[MAX];
 
-// Step 1: Create and initialize the parent array
 void makeSet(int n) {
     for (int i = 0; i < n; i++) {
-        parent[i] = i; // Each element is its own parent initially
+        parent[i] = i;
     }
 }
 
-// Step 2: Find function to get the parent (representative) of an element
 int find(int x) {
     if (parent[x] != x) {
-        parent[x] = find(parent[x]);  // Path compression (optional optimization)
+        parent[x] = find(parent[x]);
     }
     return parent[x];
 }
 
-// Step 3: Union function to join two sets by connecting their parents
 void unionSets(int a, int b) {
     int rootA = find(a);
     int rootB = find(b);
     
     if (rootA != rootB) {
-        parent[rootB] = rootA;  // Make rootA the parent of rootB
+        parent[rootB] = rootA;
     }
 }
 
-// Step 4: Display function to show parent array
 void display(int n) {
     printf("\nElement\tParent\n");
     for (int i = 0; i < n; i++) {
@@ -76,11 +71,9 @@ int main() {
             case 4:
                 printf("Exiting...\n");
                 return 0;
-                break;
 
             default:
                 printf("Invalid choice! Try again.\n");
         }
-    } 
-
+    }
 }
