@@ -4,7 +4,6 @@
 int queue[SIZE];
 int front = -1, rear = -1;
 
-// Function to insert an element
 void enqueue(int value) {
     if ((front == 0 && rear == SIZE - 1) || (front == rear + 1))
     {
@@ -22,7 +21,6 @@ void enqueue(int value) {
     printf("%d inserted into queue.\n", value);
 }
 
-// Function to delete an element
 void dequeue() {
     if (front == -1) {
         printf("Queue is Empty!\n");
@@ -39,7 +37,6 @@ void dequeue() {
         front++;
 }
 
-// Function to display the queue
 void display() {
     if (front == -1) {
         printf("Queue is Empty!\n");
@@ -59,7 +56,6 @@ void display() {
     printf("\n");
 }
 
-// Main function
 int main() {
     int choice, value;
 
